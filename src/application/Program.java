@@ -1,48 +1,45 @@
 package application;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
-
-import entities.LogAcess;
 
 public class Program {
 
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		Set<LogAcess> set = new HashSet<>();
-
-		
+		Set<Integer> a = new HashSet<>();
+		Set<Integer> b = new HashSet<>();
+		Set<Integer> c = new HashSet<>();
 		
 		System.out.println("How many students for course A?");
-		int numberA = sc.nextInt();
-		for (int i = 1; i <= numberA; i++) {
-			LogAcess LogA = new LogAcess(sc.nextInt());
-			set.add(LogA);
+		int n = sc.nextInt();
+		for(int i = 0; i < n; i++) {
+			Integer number = sc.nextInt();
+			a.add(number);
 		}
-		
 		System.out.println("How many students for course B?");
-		int numberB = sc.nextInt();
-		for (int i = 1; i <= numberB; i++) {
-			LogAcess LogA = new LogAcess(sc.nextInt());
-			set.add(LogA);
+		n = sc.nextInt();
+		for(int i = 0; i < n; i++) {
+			Integer number = sc.nextInt();
+			b.add(number);
 		}
-		
-		
 		System.out.println("How many students for course C?");
-		int numberC = sc.nextInt();
-		for (int i = 1; i <= numberC; i++) {
-			LogAcess LogA = new LogAcess(sc.nextInt());
-			set.add(LogA);
+		n = sc.nextInt();
+		for(int i = 0; i < n; i++) {
+			Integer number = sc.nextInt();
+			c.add(number);
 		}
-		for (LogAcess la : set) {
-			System.out.println(la);
+		
+		Set<Integer> totalStudents = new HashSet<>(a);
+		totalStudents.addAll(b);
+		totalStudents.addAll(c);
 
-		}
-		System.out.println("Total Students: " + set.size());
+		System.out.println("Total Students: " + totalStudents.size());
+		
+		sc.close();
+
 
 	}
-
 }
